@@ -50,14 +50,14 @@ RegisterCommand('paytow',function(source,args,rawCommand)
 			local nuser_id = vRP.getUserId(nplayer)
 
 			if nuser_id and vRP.hasPermission(nuser_id, "mecanico.permissao") and not vRP.hasPermission(nuser_id, "paisanamecanico.permissao") then
+				local money = args[1] or 500
 				
-				vRP.giveMoney(nuser_id,500)
-				
-				vRPclient._playAnim(source,true,{{"mp_common","givetake1_a"}},false)
+				vRP.giveMoney(nuser_id, parseInt(money))
+				vRPclient._playAnim(source, true, {{"mp_common", "givetake1_a"}}, false)
 				
 				TriggerClientEvent("Notify",source,"sucesso","Efetuou o pagamento pelo serviço do mecânico.")
 				
-				TriggerClientEvent("Notify",nplayer,"sucesso","Recebeu <b>$500 dólares</b> pelo serviço de mecânico.")
+				TriggerClientEvent("Notify",nplayer,"sucesso","Recebeu R$".. money .." pelo serviço de mecânico.")
 			else
 				TriggerClientEvent("Notify",source,"importante","Seu pagamento não pode ser enviado o mesmo não é um mecanico ou não está em serviço")
 			end
