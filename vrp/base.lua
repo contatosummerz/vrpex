@@ -135,6 +135,7 @@ end
 
 function vRP.isWhitelisted(user_id, cbr)
 	local rows = vRP.query("vRP/get_whitelisted",{ user_id = user_id })
+	
 	if #rows > 0 then
 		return rows[1].whitelisted
 	else
@@ -243,10 +244,12 @@ AddEventHandler("queue:playerConnecting",function(source,ids,name,setKickReason,
 	if ids ~= nil and #ids > 0 then
 		deferrals.update("Carregando identidades.")
 		local user_id = vRP.getUserIdByIdentifiers(ids)
+
 		if user_id then
 			deferrals.update("Carregando banimentos.")
 			if not vRP.isBanned(user_id) then
 				deferrals.update("Carregando whitelist.")
+
 				if vRP.isWhitelisted(user_id) then
 					if vRP.rusers[user_id] == nil then
 						deferrals.update("Carregando banco de dados.")

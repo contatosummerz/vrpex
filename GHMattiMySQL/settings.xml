@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <configuration>
 	<setting key="MySQL:UseConvars">false</setting>
-	<setting key="MySQL:Server">localhost</setting>
+	<setting key="MySQL:Server">127.0.0.1</setting>
 	<setting key="MySQL:Port">3306</setting>
-	<setting key="MySQL:Database">DATABASEMYSQL</setting>
-	<setting key="MySQL:Username">LOGINMYSQL</setting>
-	<setting key="MySQL:Password">SENHAMYSQL</setting>
+	<setting key="MySQL:Database">vrp</setting>
+	<setting key="MySQL:Username">root</setting>
+	<setting key="MySQL:Password"></setting>
 	<setting key="MySQL:Debug">false</setting>
 </configuration>
