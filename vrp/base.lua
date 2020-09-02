@@ -137,8 +137,7 @@ function vRP.isWhitelisted(user_id, cbr)
 	local rows = vRP.query("vRP/get_whitelisted",{ user_id = user_id })
 	
 	if #rows > 0 then
-		return true
-		-- return rows[1].whitelisted
+		return rows[1].whitelisted
 	else
 		return false
 	end
